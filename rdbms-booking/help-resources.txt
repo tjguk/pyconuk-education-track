@@ -1,0 +1,12 @@
+* Python mailing lists; (see http://mail.python.org for a full list):
+
+  Python Tutor: https://mail.python.org/mailman/listinfo/tutor (especially friendly)
+
+  Python List: https://mail.python.org/mailman/listinfo/python-list (less aimed at newcomers, but still friendly)
+
+
+* Other resources
+
+  #python IRC channel
+
+  StackOverflow: http://stackoverflow.com/questions/tagged/python
