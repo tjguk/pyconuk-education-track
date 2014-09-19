@@ -4,6 +4,22 @@ import sqlite3
 
 SQLITE_FILEPATH = "bookings.db"
 
+def webpage(**kwargs):
+    template = """<html>
+    <head>
+    <title>{title}</title>
+    <style>
+    p {{ background-color : red }}
+    </style>
+    </head>
+    <body>
+    <h1>{title}</h1>
+    <p>{s2}</p>
+    </body>
+    </html>
+    """
+    return template.format(**kwargs)
+
 class Database(object):
 
     def __init__(self, filepath=SQLITE_FILEPATH):
@@ -56,6 +72,7 @@ class Database(object):
         try:
             q.execute("""
             SELECT
+                rbo.booked_from,
                 usr.*
             FROM
                 users AS usr
@@ -99,15 +116,27 @@ def room_bookings(id):
     html = """<html>
     <head>
     <title>%s</title>
+    <style>
+    table {
+        background-color : yellow;
+        font-family : Tahoma, sans-serif;
+    }
+    td {
+        padding : 0.5em;
+        border : thin solid blue;
+    }
+    </style>
     </head>
     <body>
     <h1>%s</h1>
     """ % (title, title)
 
-    html += "<ul>"
-    for user_id, user_name in database.get_room_bookings(room_id):
-        html += '<li><a href="/users/%d/bookings">%s</a></li>' % (user_id, user_name)
-    html += "</ul>"
+    html += "<table>"
+    for booked_from , user_id, user_name in database.get_room_bookings(room_id):
+        html += "<tr>"
+        html += '<td>%s</td><td><a href="/users/%d/bookings">%s</a></td>' % (booked_from, user_id, user_name)
+        html += "</tr>"
+    html += "</table>"
 
     html += """
     </body>
@@ -136,6 +165,10 @@ def users(name=None):
     </html>
     """
     return html
+
+@route("/test/<stuff>/<s2>")
+def test(stuff, s2):
+    return webpage(title=stuff, s2=s2)
 
 @route("/")
 def index():
