@@ -1,0 +1,5 @@
+http://webfaction.com - old-fashioned hosting with very good support, especially for developer; flat-rate per month
+
+Heroku / gondor.io - both container-style sites which operate processes on your behalf; typically charge by the processor second / byte throughput
+
+http://pythonanywhere.com -- a thing unto itself
