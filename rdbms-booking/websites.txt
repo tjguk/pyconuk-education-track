@@ -4,3 +4,5 @@ Flask: lighter and less fully-featured - also well-supported, but smaller commun
 
 bottle.py : (the web equivalent of sqlite) one file of Python - good documentation - much smaller community
 
+You could do it "from scratch" within the python stdlib by using the wsgi ref server and the examples from the wsgi docs:
+https://docs.python.org/3.4/library/wsgiref.html
