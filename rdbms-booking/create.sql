@@ -19,6 +19,7 @@ CREATE TABLE
 (
     room_id INTEGER,
     user_id INTEGER,
-    booked_at DATETIME
+    booked_from DATETIME,
+    booked_to DATETIME
 )
 ;
