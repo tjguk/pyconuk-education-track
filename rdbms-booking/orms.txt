@@ -1,0 +1,5 @@
+sqlalchemy.org -- the big one
+
+storm -- developed by Canonical
+
+Django ORM -- if you're using Django, use this

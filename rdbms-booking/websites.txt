@@ -1,0 +1,6 @@
+Django: Big boy on the block - very widely used - very well documented
+
+Flask: lighter and less fully-featured - also well-supported, but smaller community
+
+bottle.py : (the web equivalent of sqlite) one file of Python - good documentation - much smaller community
+
