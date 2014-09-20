@@ -5,6 +5,10 @@ import sqlite3
 db = sqlite3.connect("bookings.db")
 q = db.cursor()
 
+q.execute("DELETE FROM users;")
+q.execute("DELETE FROM rooms;")
+q.execute("DELETE FROM room_bookings;")
+
 q.execute("INSERT INTO users (user_name) VALUES ('Tim Golden');")
 q.execute("INSERT INTO users (user_name) VALUES ('Fred Smith');")
 

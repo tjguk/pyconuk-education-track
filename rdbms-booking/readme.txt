@@ -1,12 +1,8 @@
 * Call create.cmd
 
   This deletes the database file if it's there and the creates it directly
-  from SQL (ie without using Python) with no data.
-
-* Run create-bookings.py
-
-  This uses Python's built-in sqlite3 module to insert data into the database
-  created above.
+  from SQL (ie without using Python) with no data. It will then call
+  create-bookings.py which uses sqlite3 to rebuild the data.
 
 * Run run.cmd
 
