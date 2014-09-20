@@ -27,12 +27,11 @@ class Database(object):
 
     def get_user(self, user_id):
         q = self.db.cursor()
-        try:
-            q.execute("SELECT * FROM users WHERE user_id = ?", [user_id])
-            for user in q.fetchall():
-                return user
-        finally:
-            q.close()
+        q.execute("SELECT * FROM users WHERE user_id = ?", [user_id])
+        for user in q.fetchall():
+            break
+        q.close()
+        return user
 
     def get_room(self, room_id):
         q = self.db.cursor()
